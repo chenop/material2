@@ -112,4 +112,21 @@
       </button>
     </md-menu>
   </div>
+
+  <div class="menu-section">
+    <p>
+      Long list
+    </p>
+    <md-toolbar>
+      <button md-icon-button [md-menu-trigger-for]="longList">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
+
+    <md-menu yPosition="above" [overlapTrigger]="false" #longList="mdMenu">
+      <button md-menu-item *ngFor="let item of manyItems" [disabled]="item.disabled">
+        {{ item.text }}
+      </button>
+    </md-menu>
+  </div>
 </div>
